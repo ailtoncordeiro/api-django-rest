@@ -36,6 +36,7 @@ class AddressUserView(APIView):
 )
 class AddressCepView(APIView):
 
+    serializer_class = AddressSerializier
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, cep):

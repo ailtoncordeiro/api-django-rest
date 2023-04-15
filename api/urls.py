@@ -13,6 +13,6 @@ router.register(r'orders', OrdersViewSet)
 router.register(r'orderitems', OrderItemsViewSet)
 
 urlpatterns = [
-    path('addresses/<int:userid>', AddressUserView.as_view()),
-    path('addresses/<str:cep>/', AddressCepView.as_view()),
+    path('addresses/userid/<int:userid>', AddressUserView.as_view()),
+    path('addresses/cep/<str:cep>/', AddressCepView.as_view()),
 ] + router.urls
