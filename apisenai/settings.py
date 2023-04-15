@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'api',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -144,15 +145,16 @@ SIMPLE_JWT = {
 }
 
 #USERS CONFIG
-AUTH_PROFILE_MODULE = 'api.Users'
-AUTH_USER_MODEL = 'api.Users'
+AUTH_PROFILE_MODULE = 'users.Users'
+AUTH_USER_MODEL = 'users.Users'
 
 
 #SWAGGER
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'API - SENAI Soluções Digitais',
-    'DESCRIPTION': 'API desenvolvida par a prova prática de desenvolvedor backend Python',
+    'TITLE': 'API - SENAI',
+    'DESCRIPTION': 'API desenvolvida para a prova prática de desenvolvedor backend Python',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
+    'SCHEMA_PATH_PREFIX': r'/api/v[0-9]',
     # OTHER SETTINGS
 }
