@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8fc#1ib#57vw^#n5j+9@!ubrb)&07-!clt_p8phpj511=vs608'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': os.environ.get("SQL_DATABASE", "prova"),
         'USER': os.environ.get("SQL_USER", "postgres"),
         'PASSWORD': os.environ.get("SQL_PASSWORD", "postgres"),
-        'HOST': os.environ.get("SQL_HOST", "postgres"),
+        'HOST': os.environ.get("SQL_HOST", "localhost"),
         'PORT': os.environ.get("SQL_PORT", "5432"),
     }
 }
