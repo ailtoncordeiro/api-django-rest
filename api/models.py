@@ -1,10 +1,5 @@
 from django.db import models
 from users .models import Users
-from validate_email import validate_email
-from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser
-)
 
 class TimeStamp(models.Model):
     """ Abstract class for creation and change registration """

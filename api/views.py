@@ -1,16 +1,13 @@
 import requests
 from decimal import Decimal, ROUND_HALF_UP
 from rest_framework.response import Response
-from django.http import JsonResponse
 from .serializers import *
 from .models import *
 from rest_framework import status
 from rest_framework import viewsets, permissions
 from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
 from drf_spectacular.types import OpenApiTypes
-from rest_framework.decorators import action, api_view
 from rest_framework.views import APIView
-from django.http import Http404
 from rest_framework.generics import RetrieveAPIView
 from django.utils.dateparse import parse_date
 
