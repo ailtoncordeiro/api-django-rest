@@ -31,6 +31,11 @@ class OrderItemsSerialiizer(serializers.ModelSerializer):
         model = OrderItems
         fields = '__all__'
 
+class CreateOrderItemsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItems
+        fields = ('orderID', 'productID', 'quantity')
+
 
 class UserOrdersSerializer(serializers.Serializer):
     product_name = serializers.CharField()

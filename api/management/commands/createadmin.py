@@ -8,8 +8,8 @@ class Command(BaseCommand):
     help = 'Create a superuser with a name'
 
     def add_arguments(self, parser):
-        parser.add_argument('--email', dest='email', help='User email', type=str)
-        parser.add_argument('--name', dest='name', help='User name', type=str)
+        parser.add_argument('email')
+        parser.add_argument('name')
         parser.add_argument('--password', dest='password', help='User password', type=str)
 
     def handle(self, *args, **options):
