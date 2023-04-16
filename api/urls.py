@@ -11,8 +11,10 @@ router.register(r'products', ProductsViewSet)
 router.register(r'productscategories', ProductsCategoriesViewSet)
 router.register(r'orders', OrdersViewSet)
 router.register(r'orderitems', OrderItemsViewSet)
+#router.register(r'userorders', UserOrdersView.as_view(), basename='userorders')
 
 urlpatterns = [
     path('addresses/userid/<int:userid>', AddressUserView.as_view()),
     path('addresses/cep/<str:cep>/', AddressCepView.as_view()),
+    path('orders/user/<int:pk>', UserOrdersView.as_view()),
 ] + router.urls

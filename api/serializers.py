@@ -30,3 +30,15 @@ class OrderItemsSerialiizer(serializers.ModelSerializer):
     class Meta:
         model = OrderItems
         fields = '__all__'
+
+
+class UserOrdersSerializer(serializers.Serializer):
+    product_name = serializers.CharField()
+    product_price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    address_description = serializers.CharField()
+    address_postal_code = serializers.CharField()
+    address_street = serializers.CharField()
+    address_complement = serializers.CharField(allow_blank=True)
+    address_neighborhood = serializers.CharField()
+    address_city = serializers.CharField()
+    address_state = serializers.CharField()
