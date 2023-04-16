@@ -1,7 +1,8 @@
 import pytest
 
 def test_list_users(api_client, user_login):
-    api_client.credentials(HTTP_AUTHORIZATION='Bearer ' + user_login)
+    user, token = user_login
+    api_client.credentials(HTTP_AUTHORIZATION='Bearer ' + token)
     response = api_client.get('/api/v1/users')
     assert response.status_code == 200
 
