@@ -177,7 +177,7 @@ class UserOrdersView(RetrieveAPIView):
                                 'product_unit_price': product.price,
                                 'product_quantity': item.quantity,
                                 'product_price': item.price,
-                                'product_total_price': item.price,
+                                'product_total_price': item.price * item.quantity,
                             })
                         else:
                             # Se não existe uma entrada para esse pedido, adiciona uma nova entrada à lista
@@ -194,7 +194,7 @@ class UserOrdersView(RetrieveAPIView):
                                     'product_name': product.name,
                                     'product_unit_price': product.price,
                                     'product_quantity': item.quantity,
-                                    'product_total_price': item.price,
+                                    'product_total_price': item.price * item.quantity,
                                 }]
                             }
 

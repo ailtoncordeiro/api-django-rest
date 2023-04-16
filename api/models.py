@@ -27,10 +27,16 @@ class Addresses(TimeStamp):
     city = models.CharField(max_length=255, blank=False, null=False, verbose_name='City')
     state = models.CharField(max_length=255, blank=False, null=False, verbose_name='State')
 
+    class Meta:
+        ordering = ['id']
+
 class Categories(TimeStamp):
     """ Class categories """
 
     name = models.CharField(max_length=255, blank=False, null=False, verbose_name='Name')
+
+    class Meta:
+        ordering = ['id']
 
 class Products(TimeStamp):
     """ class products """
@@ -39,12 +45,18 @@ class Products(TimeStamp):
     description = models.TextField(verbose_name='Description')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
 
+    class Meta:
+        ordering = ['id']
+
 
 class ProductsCategories(TimeStamp):
     """ Class products categories """
 
     productID = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='Products')
     categoriesID = models.ForeignKey(Categories, on_delete=models.CASCADE, verbose_name='Categories')
+
+    class Meta:
+        ordering = ['id']
 
 class Orders(TimeStamp):
     """ class orders """
@@ -62,6 +74,9 @@ class Orders(TimeStamp):
     status = models.CharField(max_length=11, choices=STATUS_CHOICES, verbose_name='Status')
     orderDate = models.TimeField(auto_now_add=True, verbose_name='Order Date')
 
+    class Meta:
+        ordering = ['id']
+
 class OrderItems(TimeStamp):
     """ Class orders items """
 
@@ -69,3 +84,6 @@ class OrderItems(TimeStamp):
     productID = models.ForeignKey(Products, on_delete=models.CASCADE, verbose_name='Products')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
     quantity = models.IntegerField(verbose_name='Quantity')
+
+    class Meta:
+        ordering = ['id']

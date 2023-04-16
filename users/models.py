@@ -44,6 +44,9 @@ class Users(AbstractBaseUser):
     objects = UserManager()
     USERNAME_FIELD = 'email'
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.email
     
