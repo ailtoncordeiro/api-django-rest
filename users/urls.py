@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import (
 )
 from .views import *
 
-app_name = 'API - SENAI'
+app_name = 'API'
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r'users', UsersViewSet)

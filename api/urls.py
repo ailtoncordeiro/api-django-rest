@@ -2,7 +2,7 @@ from rest_framework.routers import DefaultRouter
 from django.urls import path
 from .views import *
 
-app_name = 'API - SENAI'
+app_name = 'API'
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r'addresses', AddressViewSet)
